@@ -10,7 +10,8 @@ javac hello.java
 
 ### java
 
-자바 인터프리터. *.class파일을 번역해서 실행한다.
+- 자바 인터프리터. *.class파일을 번역해서 실행한다.
+- 이때, main메서드가 java 애플리케이션의 진입점이여서 main 메서드를 포함하는 클래스여야 한다.
 
 ```bash
 java hello
