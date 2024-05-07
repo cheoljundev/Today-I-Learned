@@ -35,3 +35,15 @@ WHERE payment_method = 'kakaopay'
 SELECT count(distinct(name)) FROM users
 ```
 
+## alias
+
+```sql
+SELECT * FROM orders o
+WHERE o.course_title = '앱개발 종합반'
+```
+
+```sql
+SELECT payment_method, COUNT(*) as cnt  FROM orders o
+WHERE o.course_title = '앱개발 종합반'
+GROUP BY payment_method 
+```
