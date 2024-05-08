@@ -82,3 +82,16 @@ SELECT * FROM users
 WHERE email LIKE 'a%t'
 ```
 
+## join
+
+두 테이블을 연결한다.
+
+```sql
+SELECT * FROM users u
+left join point_users pu on u.user_id = pu.user_id 
+```
+
+```sql
+SELECT * FROM users u
+inner join point_users pu on u.user_id = pu.user_id 
+```
