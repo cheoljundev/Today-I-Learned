@@ -82,6 +82,14 @@ SELECT * FROM users
 WHERE email LIKE 'a%t'
 ```
 
+- NULL인지 확인하기
+
+```sql
+select * from users u
+left join point_users pu on u.user_id = pu.user_id
+where pu.point_user_id is NULL
+```
+
 ## join
 
 두 테이블을 연결한다.
