@@ -103,3 +103,25 @@ left join point_users pu on u.user_id = pu.user_id
 SELECT * FROM users u
 inner join point_users pu on u.user_id = pu.user_id 
 ```
+
+## union
+
+결과물 합치기. 단, 각 결과의 order by는 깨진다. 따라서 넣어줄 필요는 없다.
+
+```sql
+(
+	select '7월' as month, c1.title, c2.week, count(*) as cnt from courses c1
+	inner join checkins c2 on c1.course_id = c2.course_id
+	inner join orders o on c2.user_id = o.user_id
+	where o.created_at >= '2020-08-01'
+	group by c1.title, c2.week
+)
+UNION ALL 
+(
+	select '8월' as month, c1.title, c2.week, count(*) as cnt from courses c1
+	inner join checkins c2 on c1.course_id = c2.course_id
+	inner join orders o on c2.user_id = o.user_id
+	where o.created_at >= '2020-08-01'
+	group by c1.title, c2.week
+)
+```
