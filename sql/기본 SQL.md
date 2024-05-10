@@ -125,3 +125,37 @@ UNION ALL
 	group by c1.title, c2.week
 )
 ```
+
+## CREATE
+
+```sql
+CREATE TABLE DEPT_TEMP AS SELECT * FROM DEPT
+```
+
+## DROP
+
+```sql
+DROP TABLE DEPT_TEMP
+```
+
+## INSERT
+
+```sql
+INSERT INTO DEPT_TEMP (DEPTNO, DNAME, LOC)
+               VALUES (50, 'DATABASE', 'SEOUL')
+```
+
+## UPDATE
+
+```sql
+UPDATE EMP_TEMP2
+   SET HIREDATE = SYSDATE
+ WHERE ENAME = '홍길동'
+```
+
+## DELETE
+
+```sql
+DELETE FROM EMP_TEMP2
+ WHERE JOB = 'PRESIDENT'
+```
